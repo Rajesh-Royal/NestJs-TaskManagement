@@ -6,7 +6,6 @@ import { TaskStatus } from './task-status.enum';
 import { Task } from './task.entity';
 import { TaskRepository } from './task.repository';
 
-
 @Injectable()
 export class TasksService {
     constructor(
@@ -20,14 +19,11 @@ export class TasksService {
 
     public async getTaskById(id: number): Promise<Task> {
         const found = await this.taskRepository.findOne(id);
-
         if(!found){
             throw new NotFoundException(`Task with the id: ${id} not found`);
         }
-
         return found;
     }
-
 
     public async createTask(createTaskDto: CreateTaskDto) : Promise<Task> {
        return await this.taskRepository.createTask(createTaskDto);
@@ -35,11 +31,9 @@ export class TasksService {
 
     public async deleteTask(id: number): Promise<boolean> {
         const result = await this.taskRepository.delete(id);
-
         if(result.affected === 0){
             throw new NotFoundException(`Task with the id: ${id} not found`)
         }
-
         return true;
     }
 
