@@ -4,7 +4,7 @@ export class AuthCredentialsDto {
     @IsString()
     @MinLength(6)
     @MaxLength(20)
-    @Matches(/^(?=[a-z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/, {
+    @Matches(/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/, {
         message: 'Username should not contain Whitespace or special characters and only lowercase letters'
     })
     username: string;
