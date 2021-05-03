@@ -32,7 +32,7 @@ export class UserRepository extends Repository<User> {
         if(user && await user.validatePassword(password)){
             return user.username;
         }else{
-            return 'Username password is not correct';
+            return null;
         }
 
     }
