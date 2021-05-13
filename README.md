@@ -6,8 +6,8 @@
 [travis-url]: https://travis-ci.org/nestjs/nest
 [linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
 [linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
+
+  <p align="center">A NestJs Application for tasks management with PostgreSQL.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -26,7 +26,44 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A NestJs Application for tasks management with PostgreSQL.
+
+> :warning: Please read **package.json, *.controller.ts** files.
+
+## Available End-Points
+
+**Auth:**
+
+/auth/signin, /auth/signup
+
+**Tasks:**
+
+- [x] `/tasks` - Use get to get all posts and Post to create a task.
+- [x] `/tasks/3` - Get and Delete.
+- [x] `/tasks/4/status` - Update task status.
+- [x] `/tasks?status=OPEN&search=Awesome` - Get Tasks with filters.
+
+## SignIn Request Example
+```javascript
+var settings = {
+  "url": "localhost:1234/auth/signin",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "username": "rajesh",
+    "password": "123456R@a"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> :warning: You may use Postman.
 
 ## Installation
 
